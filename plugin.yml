@@ -1,0 +1,4 @@
+name: DarkMythos
+main: me.botsko.mythos.Rewards
+version: 0.1
+commands:
