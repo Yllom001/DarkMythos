@@ -99,8 +99,10 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			
 			currBlock.setType(Material.AIR);
 			currBlock.getWorld().generateTree(currBlock.getLocation(), t);
-			// @todo removes whole stack, not single book
-			player.getInventory().remove( player.getItemInHand() );
+			ItemStack I = player.getInventory().getItemInHand();
+			int A = I.getAmount();
+			int giveBack = A - 1;
+			player.getInventory().getItemInHand().setAmount(giveBack);
 			return true;
 		}
 		

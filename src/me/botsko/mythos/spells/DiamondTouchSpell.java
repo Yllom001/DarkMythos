@@ -80,8 +80,10 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 		
 		Block currBlock = event.getClickedBlock();
 		currBlock.setType(Material.DIAMOND_BLOCK);
-		// @todo removes whole stack, not single book
-		player.getInventory().remove( player.getItemInHand() );
+		ItemStack I = player.getInventory().getItemInHand();
+		int A = I.getAmount();
+		int giveBack = A - 1;
+		player.getInventory().getItemInHand().setAmount(giveBack);
 		return true;
 
 	}
