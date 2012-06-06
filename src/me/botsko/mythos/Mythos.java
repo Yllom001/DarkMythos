@@ -5,7 +5,8 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 import me.botsko.mythos.events.RewardsBlockBreakEvent;
-import me.botsko.mythos.events.RewardsPlayerInteract;
+import me.botsko.mythos.events.RewardsPlayerInteractEntityEvent;
+import me.botsko.mythos.events.RewardsPlayerInteractEvent;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -65,7 +66,8 @@ public class Mythos extends JavaPlugin {
 		// Assign event listeners
 		getServer().getPluginManager().registerEvents(new RewardsBlockBreakEvent( this ), this);
 //		getServer().getPluginManager().registerEvents(new RewardsPlayerPickupItemEvent( this ), this);
-		getServer().getPluginManager().registerEvents(new RewardsPlayerInteract( this ), this);
+		getServer().getPluginManager().registerEvents(new RewardsPlayerInteractEvent( this ), this);
+		getServer().getPluginManager().registerEvents(new RewardsPlayerInteractEntityEvent( this ), this);
 		
 		// Assign handlers for in-game commands
 //		getCommand("buy").setExecutor( (CommandExecutor) new BuyCommandExecutor(this) );

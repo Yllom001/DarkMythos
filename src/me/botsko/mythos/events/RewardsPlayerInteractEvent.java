@@ -12,7 +12,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class RewardsPlayerInteract implements Listener {
+public class RewardsPlayerInteractEvent implements Listener {
 	
 	private Mythos plugin;
 	private AwardChoice ac;
@@ -21,7 +21,7 @@ public class RewardsPlayerInteract implements Listener {
 	 * 
 	 * @param plugin
 	 */
-	public RewardsPlayerInteract( Mythos plugin ){
+	public RewardsPlayerInteractEvent( Mythos plugin ){
 		this.plugin = plugin;
 		this.ac = new AwardChoice();
 	}

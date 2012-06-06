@@ -32,7 +32,7 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Feather Touch";
+		return "You have discovered a magical spell: Creature Thief";
 	}
 	
 	
@@ -41,7 +41,7 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getSpellUseMessage(){
-		return "Used spell Feather Touch! Spell book consumed.";
+		return "Used spell Creature Thief! Spell book consumed.";
 	}
 	
 	
@@ -79,12 +79,22 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 		
 		Entity e = event.getRightClicked();
 		
-		player.sendMessage( ""+e.getType().getTypeId() );
+		if(e != null){
 		
-		
-//		player.getInventory().addItem( copy );
-//		player.updateInventory();
-		subtractFromHand( player );
-		return true;
+			// Determine egg
+			ItemStack egg = new ItemStack( 383, 1 );
+			egg.setDurability( e.getType().getTypeId() );
+			player.getInventory().addItem(egg);
+			
+			// Remove mob
+			e.remove();
+			
+			// Give egg to player
+			player.updateInventory();
+			subtractFromHand( player );
+	
+			return true;
+		}
+		return false;
 	}
 }
