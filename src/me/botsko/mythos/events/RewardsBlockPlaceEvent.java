@@ -7,7 +7,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
-import me.botsko.mythos.Rewards;
+import me.botsko.mythos.Mythos;
 
 
 public class RewardsBlockPlaceEvent implements Listener {
@@ -18,7 +18,7 @@ public class RewardsBlockPlaceEvent implements Listener {
 	 * 
 	 * @param plugin
 	 */
-	public RewardsBlockPlaceEvent( Rewards plugin ){
+	public RewardsBlockPlaceEvent( Mythos plugin ){
 //		this.plugin = plugin;
 	}
 

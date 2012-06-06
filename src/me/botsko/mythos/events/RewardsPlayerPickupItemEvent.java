@@ -1,6 +1,6 @@
 package me.botsko.mythos.events;
 
-import me.botsko.mythos.Rewards;
+import me.botsko.mythos.Mythos;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -10,13 +10,13 @@ import org.bukkit.inventory.ItemStack;
 
 public class RewardsPlayerPickupItemEvent implements Listener {
 	
-	private Rewards plugin;
+	private Mythos plugin;
 	
 	/**
 	 * 
 	 * @param plugin
 	 */
-	public RewardsPlayerPickupItemEvent( Rewards plugin ){
+	public RewardsPlayerPickupItemEvent( Mythos plugin ){
 		this.plugin = plugin;
 	}
 

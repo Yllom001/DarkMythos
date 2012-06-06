@@ -1,14 +1,13 @@
 package me.botsko.mythos.spells;
 
 import org.bukkit.Material;
-import org.bukkit.TreeType;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class BotanicalMaturitySpell extends SpellBase implements Spell {
+public class DiamondTouchSpell extends SpellBase implements Spell {
 
 	
 	/**
@@ -16,7 +15,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public short getSpellId(){
-		return 1;
+		return 4;
 	}
 	
 	
@@ -24,8 +23,9 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 60;
+		return 2;
 	}
+	
 	
 	
 	/**
@@ -33,7 +33,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Botanical Maturity";
+		return "You have discovered a magical spell: Diamond Touch";
 	}
 	
 	
@@ -42,7 +42,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getSpellUseMessage(){
-		return "Used spell Botanical Maturity! Spell book consumed.";
+		return "Used spell Diamond Touch! Spell book consumed.";
 	}
 	
 	
@@ -79,31 +79,10 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		
 		Block currBlock = event.getClickedBlock();
-		if(currBlock.getType() == Material.SAPLING){
-			
-			// Determine the tree type
-			TreeType t;
-			switch(currBlock.getData()){
-				case 1:
-					t = TreeType.REDWOOD;
-					break;
-				case 2:
-					t = TreeType.BIRCH;
-					break;
-				case 3:
-					t = TreeType.JUNGLE;
-					break;
-				default:
-					t = TreeType.TREE;
-			}
-			
-			currBlock.setType(Material.AIR);
-			currBlock.getWorld().generateTree(currBlock.getLocation(), t);
-			// @todo removes whole stack, not single book
-			player.getInventory().remove( player.getItemInHand() );
-			return true;
-		}
-		
-		return false;
+		currBlock.setType(Material.DIAMOND_BLOCK);
+		// @todo removes whole stack, not single book
+		player.getInventory().remove( player.getItemInHand() );
+		return true;
+
 	}
 }

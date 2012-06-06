@@ -1,6 +1,6 @@
 package me.botsko.mythos.events;
 
-import me.botsko.mythos.Rewards;
+import me.botsko.mythos.Mythos;
 import me.botsko.mythos.awards.AwardChoice;
 import me.botsko.mythos.spells.SpellBase;
 
@@ -14,14 +14,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 
 public class RewardsPlayerInteract implements Listener {
 	
-	private Rewards plugin;
+	private Mythos plugin;
 	private AwardChoice ac;
 	
 	/**
 	 * 
 	 * @param plugin
 	 */
-	public RewardsPlayerInteract( Rewards plugin ){
+	public RewardsPlayerInteract( Mythos plugin ){
 		this.plugin = plugin;
 		this.ac = new AwardChoice();
 	}

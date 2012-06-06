@@ -6,21 +6,21 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
-import me.botsko.mythos.Rewards;
+import me.botsko.mythos.Mythos;
 import me.botsko.mythos.awards.AwardChoice;
 import me.botsko.mythos.spells.SpellBase;
 
 
 public class RewardsBlockBreakEvent implements Listener {
 	
-	private Rewards plugin;
+	private Mythos plugin;
 	private AwardChoice ac;
 	
 	/**
 	 * 
 	 * @param plugin
 	 */
-	public RewardsBlockBreakEvent( Rewards plugin ){
+	public RewardsBlockBreakEvent( Mythos plugin ){
 		this.plugin = plugin;
 		this.ac = new AwardChoice();
 	}

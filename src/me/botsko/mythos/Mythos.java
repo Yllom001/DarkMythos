@@ -6,13 +6,12 @@ import java.util.logging.Logger;
 
 import me.botsko.mythos.events.RewardsBlockBreakEvent;
 import me.botsko.mythos.events.RewardsPlayerInteract;
-import me.botsko.mythos.events.RewardsPlayerPickupItemEvent;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Rewards extends JavaPlugin {
+public class Mythos extends JavaPlugin {
 
 	
 	Logger log = Logger.getLogger("Minecraft");
@@ -35,7 +34,7 @@ public class Rewards extends JavaPlugin {
         try {
         	conn = DriverManager.getConnection(uri, conProperties);
         } catch (SQLException e) {
-            log.throwing("me.botsko.dhmcrewards", "dbc()", e);
+            log.throwing("me.botsko.darkmythos", "dbc()", e);
         }
     }
 	
@@ -65,7 +64,7 @@ public class Rewards extends JavaPlugin {
 		
 		// Assign event listeners
 		getServer().getPluginManager().registerEvents(new RewardsBlockBreakEvent( this ), this);
-		getServer().getPluginManager().registerEvents(new RewardsPlayerPickupItemEvent( this ), this);
+//		getServer().getPluginManager().registerEvents(new RewardsPlayerPickupItemEvent( this ), this);
 		getServer().getPluginManager().registerEvents(new RewardsPlayerInteract( this ), this);
 		
 		// Assign handlers for in-game commands
@@ -104,7 +103,7 @@ public class Rewards extends JavaPlugin {
 	 * @return
 	 */
 	public String playerMsg(String msg){
-		return ChatColor.GOLD + "[Rewards]: " + ChatColor.WHITE + msg;
+		return ChatColor.GOLD + "[Mythos]: " + ChatColor.WHITE + msg;
 	}
 	
 	
@@ -114,7 +113,7 @@ public class Rewards extends JavaPlugin {
 	 * @return
 	 */
 	public String playerError(String msg){
-		return ChatColor.GOLD + "[Rewards]: " + ChatColor.RED + msg;
+		return ChatColor.GOLD + "[Mythos]: " + ChatColor.RED + msg;
 	}
 	
 	
@@ -123,7 +122,7 @@ public class Rewards extends JavaPlugin {
 	 * @param message
 	 */
 	public void log(String message){
-		log.info("[Rewards]: " + message);
+		log.info("[Mythos]: " + message);
 	}
 	
 	
@@ -133,7 +132,7 @@ public class Rewards extends JavaPlugin {
 	 */
 	public void debug(String message){
 		if(this.getConfig().getBoolean("debug")){
-			log.info("[Rewards]: " + message);
+			log.info("[Mythos]: " + message);
 		}
 	}
 	

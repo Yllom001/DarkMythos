@@ -12,6 +12,12 @@ public interface Spell {
 	 * 
 	 * @return
 	 */
+	public int getWeight();
+	
+	/**
+	 * 
+	 * @return
+	 */
 	public String getAwardMessage();
 	
 	

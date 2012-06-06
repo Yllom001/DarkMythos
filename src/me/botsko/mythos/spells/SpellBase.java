@@ -16,9 +16,8 @@ public class SpellBase {
 	
 	// Ideas:
 	
-	// turn ore into ingots
+	// copy blocks
 	// fell tree
-	// turn block to gold, diamond, etc
 	// smite
 	// erase mobs
 	// drain water
@@ -28,6 +27,10 @@ public class SpellBase {
 	
 	// some are very rarely cursed
 	// cause bad effects on player
+	
+	// poison player on pickup, or use?
+	
+	// add levels to spells - make them last for x seconds
 	
 	// spell of the blue carnation
 	
@@ -39,6 +42,15 @@ public class SpellBase {
 	 */
 	public short getSpellId(){
 		return 0;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int getWeight(){
+		return 1;
 	}
 	
 	
