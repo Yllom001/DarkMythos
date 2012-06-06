@@ -32,6 +32,7 @@ public class AwardChoice {
 		spells.add(new DiamondTouchSpell());
 		spells.add(new FeatherTouchSpell());
 		spells.add(new CreatureThiefSpell());
+//		spells.add(new PickSummonerSpell());
 	}
 	
 	
