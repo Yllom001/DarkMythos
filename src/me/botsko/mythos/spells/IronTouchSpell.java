@@ -69,7 +69,6 @@ public class IronTouchSpell extends SpellBase implements Spell {
 		return false;
 	}
 	
-	
 	/**
 	 * 
 	 * @param event
@@ -80,8 +79,10 @@ public class IronTouchSpell extends SpellBase implements Spell {
 		Block currBlock = event.getClickedBlock();
 //		if(currBlock.getType() == Material.SAPLING){
 			currBlock.setType(Material.IRON_BLOCK);
-			// @todo removes whole stack, not single book
-			player.getInventory().remove( player.getItemInHand() );
+			ItemStack I = player.getInventory().getItemInHand();
+			int A = I.getAmount();
+			int giveBack = A - 1;
+			player.getInventory().getItemInHand().setAmount(giveBack);
 			return true;
 //		}
 //		return false;
