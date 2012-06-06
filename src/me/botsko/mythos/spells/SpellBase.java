@@ -4,6 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -17,7 +18,6 @@ public class SpellBase {
 	
 	// Ideas:
 	
-	// copy blocks
 	// fell tree
 	// smite
 	// erase mobs
@@ -88,6 +88,16 @@ public class SpellBase {
 	 * @return
 	 */
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
+		return false;
+	}
+	
+	
+	/**
+	 * 
+	 * @param event
+	 * @return
+	 */
+	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
 		return false;
 	}
 	

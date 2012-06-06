@@ -1,13 +1,13 @@
 package me.botsko.mythos.spells;
 
 import org.bukkit.Material;
-import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class FeatherTouchSpell extends SpellBase implements Spell {
+public class CreatureThiefSpell extends SpellBase implements Spell {
 
 	
 	/**
@@ -15,7 +15,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public short getSpellId(){
-		return 5;
+		return 7;
 	}
 	
 	
@@ -23,7 +23,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 30;
+		return 10;
 	}
 	
 	
@@ -75,12 +75,15 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
-		Block currBlock = event.getClickedBlock();
-		ItemStack copy = new ItemStack( currBlock.getType(), 1 );
-		copy.setDurability(currBlock.getData());
-		player.getInventory().addItem( copy );
-		player.updateInventory();
+	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
+		
+		Entity e = event.getRightClicked();
+		
+		player.sendMessage( ""+e.getType().getTypeId() );
+		
+		
+//		player.getInventory().addItem( copy );
+//		player.updateInventory();
 		subtractFromHand( player );
 		return true;
 	}
