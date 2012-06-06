@@ -1,12 +1,13 @@
 package me.botsko.mythos.spells;
 
 import org.bukkit.Material;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class PickSummonerSpell extends SpellBase implements Spell {
+public class CreatureBanisherSpell extends SpellBase implements Spell {
 
 	
 	/**
@@ -14,7 +15,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public short getSpellId(){
-		return 6;
+		return 8;
 	}
 	
 	
@@ -31,7 +32,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Pick Summoner!";
+		return "You have discovered a magical spell: Creature Banisher";
 	}
 	
 	
@@ -40,7 +41,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getSpellUseMessage(){
-		return "Used spell Pick Summoner! Spell books consumed.";
+		return "Used spell Creature Banisher! Spell book consumed.";
 	}
 	
 	
@@ -50,7 +51,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
-		if( block.getType() == Material.IRON_ORE){
+		if( block.getType() == Material.GRASS || block.getType() == Material.DIRT ){
 			
 			// Set item
 			ItemStack i = new ItemStack(Material.BOOK, 1);
@@ -74,10 +75,17 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
-	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
-		player.getInventory().addItem( new ItemStack( Material.IRON_PICKAXE, 1 ) );
-		player.updateInventory();
-		subtractFromHand( player );
-		return true;
+	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
+		
+		Entity e = event.getRightClicked();
+		
+		if(e != null){
+
+			// Remove mob
+			e.remove();
+	
+			return true;
+		}
+		return false;
 	}
 }

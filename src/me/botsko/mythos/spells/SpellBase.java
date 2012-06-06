@@ -15,27 +15,7 @@ public class SpellBase {
 	 * Block the action happened to
 	 */
 	protected Block block;
-	
-	// Ideas:
-	
-	// fell tree
-	// smite
-	// erase mobs
-	// drain water
-	// fill health/hunger
-	// god mode
-	// capture entity as egg
-	
-	// some are very rarely cursed
-	// cause bad effects on player
-	
-	// poison player on pickup, or use?
-	
-	// add levels to spells - make them last for x seconds
-	
-	// spell of the blue carnation
-	
-	// prevent stacking: InventoryClickEvents
+
 
 	/**
 	 * 

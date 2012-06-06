@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import me.botsko.mythos.spells.BotanicalMaturitySpell;
+import me.botsko.mythos.spells.CreatureBanisherSpell;
 import me.botsko.mythos.spells.CreatureThiefSpell;
 import me.botsko.mythos.spells.DiamondTouchSpell;
 import me.botsko.mythos.spells.FeatherTouchSpell;
@@ -34,6 +35,7 @@ public class AwardChoice {
 		spells.add(new FeatherTouchSpell());
 		spells.add(new CreatureThiefSpell());
 		spells.add(new PickSummonerSpell());
+		spells.add(new CreatureBanisherSpell());
 	}
 	
 	
