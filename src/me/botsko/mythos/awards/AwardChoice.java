@@ -10,6 +10,7 @@ import me.botsko.mythos.spells.DiamondTouchSpell;
 import me.botsko.mythos.spells.FeatherTouchSpell;
 import me.botsko.mythos.spells.GoldenTouchSpell;
 import me.botsko.mythos.spells.IronTouchSpell;
+import me.botsko.mythos.spells.PickSummonerSpell;
 import me.botsko.mythos.spells.SpellBase;
 
 public class AwardChoice {
@@ -30,6 +31,7 @@ public class AwardChoice {
 		spells.add(new GoldenTouchSpell());
 		spells.add(new DiamondTouchSpell());
 		spells.add(new FeatherTouchSpell());
+		spells.add(new PickSummonerSpell());
 	}
 	
 	
