@@ -7,6 +7,7 @@ import java.util.Random;
 
 import me.botsko.mythos.spells.BotanicalMaturitySpell;
 import me.botsko.mythos.spells.DiamondTouchSpell;
+import me.botsko.mythos.spells.FeatherTouchSpell;
 import me.botsko.mythos.spells.GoldenTouchSpell;
 import me.botsko.mythos.spells.IronTouchSpell;
 import me.botsko.mythos.spells.SpellBase;
@@ -28,6 +29,7 @@ public class AwardChoice {
 		spells.add(new IronTouchSpell());
 		spells.add(new GoldenTouchSpell());
 		spells.add(new DiamondTouchSpell());
+		spells.add(new FeatherTouchSpell());
 	}
 	
 	

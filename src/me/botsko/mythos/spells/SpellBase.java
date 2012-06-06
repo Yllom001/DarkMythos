@@ -5,6 +5,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.ItemStack;
 
 public class SpellBase {
 	
@@ -99,5 +100,20 @@ public class SpellBase {
 		Location loc = block.getLocation();
 		loc.setY(350D);
 		block.getWorld().strikeLightning(loc);
+	}
+	
+	
+	/**
+	 * 
+	 * @param player
+	 */
+	protected void subtractFromHand(Player player){
+		
+		ItemStack in_hand = player.getInventory().getItemInHand();
+		if(in_hand.getAmount() == 1){
+			player.getInventory().remove(in_hand);
+		} else {
+			in_hand.setAmount( in_hand.getAmount() - 1 );
+		}
 	}
 }

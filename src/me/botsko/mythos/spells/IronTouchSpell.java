@@ -75,16 +75,9 @@ public class IronTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
-		
 		Block currBlock = event.getClickedBlock();
-//		if(currBlock.getType() == Material.SAPLING){
-			currBlock.setType(Material.IRON_BLOCK);
-			ItemStack I = player.getInventory().getItemInHand();
-			int A = I.getAmount();
-			int giveBack = A - 1;
-			player.getInventory().getItemInHand().setAmount(giveBack);
-			return true;
-//		}
-//		return false;
+		currBlock.setType(Material.IRON_BLOCK);
+		subtractFromHand( player );
+		return true;
 	}
 }

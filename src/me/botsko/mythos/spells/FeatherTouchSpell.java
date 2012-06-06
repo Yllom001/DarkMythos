@@ -7,7 +7,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class DiamondTouchSpell extends SpellBase implements Spell {
+public class FeatherTouchSpell extends SpellBase implements Spell {
 
 	
 	/**
@@ -15,7 +15,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public short getSpellId(){
-		return 4;
+		return 5;
 	}
 	
 	
@@ -23,9 +23,8 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 2;
+		return 30;
 	}
-	
 	
 	
 	/**
@@ -33,7 +32,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Diamond Touch";
+		return "You have discovered a magical spell: Feather Touch";
 	}
 	
 	
@@ -42,7 +41,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getSpellUseMessage(){
-		return "Used spell Diamond Touch! Spell book consumed.";
+		return "Used spell Feather Touch! Spell book consumed.";
 	}
 	
 	
@@ -77,11 +76,10 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
-		
 		Block currBlock = event.getClickedBlock();
-		currBlock.setType(Material.DIAMOND_BLOCK);
+		player.getInventory().addItem( new ItemStack( currBlock.getType(), 1 ) );
+		player.updateInventory();
 		subtractFromHand( player );
 		return true;
-
 	}
 }

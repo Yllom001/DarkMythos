@@ -99,10 +99,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			
 			currBlock.setType(Material.AIR);
 			currBlock.getWorld().generateTree(currBlock.getLocation(), t);
-			ItemStack I = player.getInventory().getItemInHand();
-			int A = I.getAmount();
-			int giveBack = A - 1;
-			player.getInventory().getItemInHand().setAmount(giveBack);
+			subtractFromHand( player );
 			return true;
 		}
 		
