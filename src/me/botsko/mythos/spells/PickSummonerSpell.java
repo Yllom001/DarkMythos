@@ -22,7 +22,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 5;
+		return 20;
 	}
 	
 	
@@ -78,6 +78,8 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 		Material M = Material.IRON_PICKAXE;
 		player.getInventory().addItem( new ItemStack( M, 1 ) );
 		player.updateInventory();
+		subtractFromHand( player );
+		subtractFromHand( player );
 		subtractFromHand( player );
 		return true;
 	}
