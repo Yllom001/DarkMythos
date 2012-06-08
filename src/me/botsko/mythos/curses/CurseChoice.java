@@ -10,7 +10,7 @@ import me.botsko.mythos.utilities.WeightedRandom;
 public class CurseChoice {
 	
 	/**
-	 * Holds the spells we offer
+	 * Holds the curses we offer
 	 */
 	List<MythosWeighted> curses = new ArrayList<MythosWeighted>();
 	
@@ -34,7 +34,7 @@ public class CurseChoice {
 	 * @return
 	 */
 	public CurseBase chooseRandomCurse(){
-		// We only want to choose a weighted award
+		// We only want to choose a weighted curse
 		// very rarely, so it's odds are checked first
 		if(WeightedRandom.getRandomNumber() == 2){
 			return (CurseBase) WeightedRandom.chooseOnWeight(curses);

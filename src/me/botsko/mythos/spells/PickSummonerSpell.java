@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -60,7 +62,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 			block.getWorld().dropItemNaturally(block.getLocation(), i);
 			
 			// Boom!
-			awardThunder();
+			MythosUtil.awardThunder( block );
 
 			return true;
 			
@@ -77,7 +79,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		player.getInventory().addItem( new ItemStack( Material.IRON_PICKAXE, 1 ) );
 		player.updateInventory();
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 		return true;
 	}
 }

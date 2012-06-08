@@ -1,11 +1,19 @@
-package me.botsko.mythos.curses;
+package me.botsko.mythos.artifacts;
 
 import me.botsko.mythos.MythosWeighted;
 
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class CurseBase implements MythosWeighted {
+public class ArtifactBase implements MythosWeighted {
+	
+	
+	/**
+	 * Block the action happened to
+	 */
+	protected Block block;
 
 	
 	/**
@@ -21,17 +29,17 @@ public class CurseBase implements MythosWeighted {
 	 * 
 	 * @return
 	 */
-	public String getMessage(){
+	public String getAwardMessage(){
 		return "";
 	}
-
-
+	
+	
 	/**
 	 * 
-	 * @param player
+	 * @param event
 	 */
-	public void applyCurse(Player player){
-		// does nothing by default
+	public boolean getBlockBreakAward(BlockBreakEvent event){
+		return false;
 	}
 	
 	

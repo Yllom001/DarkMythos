@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -62,7 +64,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 			block.getWorld().dropItemNaturally(block.getLocation(), i);
 			
 			// Boom!
-			awardThunder();
+			MythosUtil.awardThunder( block );
 
 			return true;
 			
@@ -80,7 +82,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 		
 		Block currBlock = event.getClickedBlock();
 		currBlock.setType(Material.DIAMOND_BLOCK);
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 		return true;
 
 	}

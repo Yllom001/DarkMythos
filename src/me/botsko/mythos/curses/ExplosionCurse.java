@@ -26,7 +26,7 @@ public class ExplosionCurse extends CurseBase {
 	 * @return
 	 */
 	public String getMessage(){
-		return "Spell book held a rare curse... you have created an explosion!";
+		return "Spell book was cursed by Artago, God of Explosions!";
 	}
 
 	

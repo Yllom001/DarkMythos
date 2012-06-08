@@ -26,7 +26,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * @return
 	 */
 	public String getMessage(){
-		return "Spell book was cursed... you have sacrificed health!";
+		return "Spell book was cursed! Acheron demands a sacrifice of health!";
 	}
 
 	

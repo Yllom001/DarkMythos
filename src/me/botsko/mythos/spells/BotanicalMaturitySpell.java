@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.Material;
 import org.bukkit.TreeType;
 import org.bukkit.block.Block;
@@ -33,7 +35,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @return
 	 */
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Botanical Maturity";
+		return "You have discovered a magical spell: Demeter's Spell of Botanical Maturity";
 	}
 	
 	
@@ -62,7 +64,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			block.getWorld().dropItemNaturally(block.getLocation(), i);
 			
 			// Boom!
-			awardThunder();
+			MythosUtil.awardThunder( block );
 
 			return true;
 			
@@ -99,7 +101,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			
 			currBlock.setType(Material.AIR);
 			currBlock.getWorld().generateTree(currBlock.getLocation(), t);
-			subtractFromHand( player );
+			MythosUtil.subtractFromHand( player );
 			return true;
 
 		}

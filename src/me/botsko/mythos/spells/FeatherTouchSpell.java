@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -61,7 +63,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 			block.getWorld().dropItemNaturally(block.getLocation(), i);
 			
 			// Boom!
-			awardThunder();
+			MythosUtil.awardThunder( block );
 
 			return true;
 			
@@ -81,7 +83,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 		copy.setDurability(currBlock.getData());
 		player.getInventory().addItem( copy );
 		player.updateInventory();
-		subtractFromHand( player );
+		MythosUtil.subtractFromHand( player );
 		return true;
 	}
 }
