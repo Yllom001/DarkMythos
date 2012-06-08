@@ -21,6 +21,7 @@ public class CurseChoice {
 		curses.add(new HealthDamageCurse());
 		curses.add(new PoisonPlayerCurse());
 		curses.add(new KillPlayerCurse());
+		curses.add(new LoseXPCurse());
 	}
 	
 	
@@ -31,10 +32,10 @@ public class CurseChoice {
 	public CurseBase chooseRandomCurse(){
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
-		if(getRandomNumber() == 2){
+//		if(getRandomNumber() == 2){
 			return chooseOnWeight(curses);
-		}
-		return null;
+//		}
+//		return null;
 		
 	}
 	

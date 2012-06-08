@@ -30,7 +30,6 @@ public class HealthDamageCurse extends CurseBase {
 	}
 
 	
-	
 	/**
 	 * 
 	 * @param player

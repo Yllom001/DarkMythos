@@ -1,6 +1,8 @@
 package me.botsko.mythos.events;
 
 import me.botsko.mythos.Mythos;
+import me.botsko.mythos.curses.CurseBase;
+import me.botsko.mythos.curses.CurseChoice;
 import me.botsko.mythos.spells.SpellBase;
 import me.botsko.mythos.spells.SpellChoice;
 
@@ -15,6 +17,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 	
 	private Mythos plugin;
 	private SpellChoice ac;
+	private CurseChoice cc;
 	
 	/**
 	 * 
@@ -23,6 +26,7 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 	public MythosPlayerInteractEntityEvent( Mythos plugin ){
 		this.plugin = plugin;
 		this.ac = new SpellChoice();
+		this.cc = new CurseChoice();
 	}
 	
 	
@@ -41,11 +45,23 @@ public class MythosPlayerInteractEntityEvent implements Listener {
 				SpellBase award = ac.chooseSpell( player.getItemInHand().getDurability() );
 				if(award != null){
 					
-					// Get the block break award
-					if( award.useSpellPlayerEntityInteract(event, player) ){
+					// If the item is cursed, apply the curse and skip using it
+					CurseBase curse = cc.chooseRandomCurse();
+					if(curse == null){
 					
-						// Message the player
-						player.sendMessage( plugin.playerMsg( award.getSpellUseMessage() ));
+						// Get the block break award
+						if( award.useSpellPlayerEntityInteract(event, player) ){
+						
+							// Message the player
+							player.sendMessage( plugin.playerMsg( award.getSpellUseMessage() ));
+							
+						}
+					} else {
+						
+						curse.applyCurse(player);
+						
+						// Tell them about the curse
+						player.sendMessage( plugin.playerMsg( curse.getMessage() ));
 						
 					}
 				}

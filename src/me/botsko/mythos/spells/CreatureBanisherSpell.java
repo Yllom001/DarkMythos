@@ -23,7 +23,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 60;
+		return 55;
 	}
 	
 	
@@ -83,6 +83,8 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 
 			// Remove mob
 			e.remove();
+			
+			subtractFromHand( player );
 	
 			return true;
 		}

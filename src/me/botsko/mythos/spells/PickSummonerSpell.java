@@ -22,7 +22,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 60;
+		return 61;
 	}
 	
 	

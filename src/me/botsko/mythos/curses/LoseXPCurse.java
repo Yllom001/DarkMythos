@@ -2,10 +2,8 @@ package me.botsko.mythos.curses;
 
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
-public class PoisonPlayerCurse extends CurseBase {
+public class LoseXPCurse extends CurseBase {
 	
 	
 	/**
@@ -19,7 +17,7 @@ public class PoisonPlayerCurse extends CurseBase {
 	 * @return
 	 */
 	public int getWeight(){
-		return 60;
+		return 10;
 	}
 	
 	
@@ -28,7 +26,7 @@ public class PoisonPlayerCurse extends CurseBase {
 	 * @return
 	 */
 	public String getMessage(){
-		return "Spell book was cursed... you have been poisoned!";
+		return "Spell book was cursed... you have sacrificed XP!";
 	}
 
 	
@@ -37,8 +35,8 @@ public class PoisonPlayerCurse extends CurseBase {
 	 * @param player
 	 */
 	public void applyCurse(Player player){
-		player.addPotionEffect( new PotionEffect(PotionEffectType.POISON, 200, 1) );
-		player.addPotionEffect( new PotionEffect(PotionEffectType.WEAKNESS, 200, 1) );
+		player.setLevel(0);
+		player.setTotalExperience(0);
 		subtractFromHand( player );
 	}
 }
