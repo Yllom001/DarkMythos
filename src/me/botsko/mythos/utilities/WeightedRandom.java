@@ -3,7 +3,7 @@ package me.botsko.mythos.utilities;
 import java.util.List;
 import java.util.Random;
 
-import me.botsko.mythos.spells.SpellBase;
+import me.botsko.mythos.MythosWeighted;
 
 public class WeightedRandom {
 
@@ -23,11 +23,11 @@ public class WeightedRandom {
 	 * @param items
 	 * @return
 	 */
-	public static SpellBase chooseOnWeight(List<SpellBase> items) {
+	public static MythosWeighted chooseOnWeight(List<MythosWeighted> items) {
 		
 		// Set total weight for items
         double completeWeight = 0.0d;
-        for (SpellBase item : items){
+        for (MythosWeighted item : items){
             completeWeight += item.getWeight();
         }
 //        System.out.println("Complete Weight Is: " + completeWeight);
@@ -40,7 +40,7 @@ public class WeightedRandom {
 //        System.out.println("r Is: " + r);
         
         double countWeight = 0.0;
-        for (SpellBase item : items) {
+        for (MythosWeighted item : items) {
 //        	System.out.println("Checking Spell: " + item.getClass().toString() + " CountWeight: " + countWeight);
             countWeight += item.getWeight();
             if (countWeight >= r){

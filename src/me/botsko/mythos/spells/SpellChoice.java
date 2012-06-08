@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import me.botsko.mythos.MythosWeighted;
 import me.botsko.mythos.utilities.WeightedRandom;
 
 
@@ -12,7 +13,7 @@ public class SpellChoice {
 	/**
 	 * Holds the spells we offer
 	 */
-	List<SpellBase> spells = new ArrayList<SpellBase>();
+	List<MythosWeighted> spells = new ArrayList<MythosWeighted>();
 	
 	
 	/**
@@ -40,7 +41,7 @@ public class SpellChoice {
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
 		if(WeightedRandom.getRandomNumber() == 2){
-			return WeightedRandom.chooseOnWeight(spells);
+			return (SpellBase) WeightedRandom.chooseOnWeight(spells);
 		}
 		return null;
 	}
@@ -51,9 +52,9 @@ public class SpellChoice {
 	 * @return
 	 */
 	public SpellBase chooseSpell(int spell_id){
-		Iterator<SpellBase> iterator = spells.iterator();
+		Iterator<MythosWeighted> iterator = spells.iterator();
 		while (iterator.hasNext()) {
-			SpellBase spell = iterator.next();
+			SpellBase spell = (SpellBase) iterator.next();
 			if(spell.getSpellId() == spell_id){
 				return spell;
 			}
