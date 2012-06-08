@@ -17,6 +17,7 @@ public class FallCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 60;
 	}
@@ -26,6 +27,7 @@ public class FallCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book was cursed... you have been shot up to the heavens!";
 	}
@@ -36,6 +38,7 @@ public class FallCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
 		Location l = player.getLocation();
 		l.setY( player.getWorld().getMaxHeight() );

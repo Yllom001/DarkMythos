@@ -26,7 +26,8 @@ public class CurseChoice {
 		curses.add(new LoseXPCurse());
 		curses.add(new ExplosionCurse());
 		curses.add(new FallCurse());
-		curses.add(new SmiteCurse());
+		curses.add(new SmitePlayerCurse());
+		curses.add(new IgnitePlayerCurse());
 		curses.add(new InventoryCurse());
 	}
 	

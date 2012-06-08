@@ -3,7 +3,7 @@ package me.botsko.mythos.curses;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-public class SmiteCurse extends CurseBase {
+public class SmitePlayerCurse extends CurseBase {
 	
 	
 	/**
@@ -16,6 +16,7 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}
@@ -25,8 +26,9 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
-		return "Spell book held a powerful curse... you have set yourself on fire!";
+		return "Spell book has been cursed by Zeus!";
 	}
 	
 	
@@ -34,9 +36,8 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
-        player.setFireTicks(10000);
-		subtractFromHand( player );
-		player.setHealth(0);
+		player.getWorld().strikeLightning( player.getLocation() );
 	}
 }

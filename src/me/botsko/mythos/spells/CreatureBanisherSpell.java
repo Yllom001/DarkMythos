@@ -16,6 +16,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public short getSpellId(){
 		return 8;
 	}
@@ -24,6 +25,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 55;
 	}
@@ -33,6 +35,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You have discovered a magical spell: Creature Banisher";
 	}
@@ -42,6 +45,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Creature Banisher! Spell book consumed.";
 	}
@@ -50,6 +54,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
@@ -77,6 +82,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
+	@Override
 	public boolean useSpellPlayerEntityInteract(PlayerInteractEntityEvent event, Player player){
 		
 		Entity e = event.getRightClicked();

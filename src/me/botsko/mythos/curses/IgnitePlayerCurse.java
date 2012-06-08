@@ -3,7 +3,7 @@ package me.botsko.mythos.curses;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-public class KillPlayerCurse extends CurseBase {
+public class IgnitePlayerCurse extends CurseBase {
 	
 	
 	/**
@@ -28,7 +28,7 @@ public class KillPlayerCurse extends CurseBase {
 	 */
 	@Override
 	public String getMessage(){
-		return "Spell book held the ultimate curse... you have sacrificed your life!";
+		return "Spell book held a powerful curse... you have set yourself on fire!";
 	}
 	
 	
@@ -38,7 +38,8 @@ public class KillPlayerCurse extends CurseBase {
 	 */
 	@Override
 	public void applyCurse(Player player){
+        player.setFireTicks(10000);
 		subtractFromHand( player );
-		player.setHealth( 0 );
+		player.setHealth(0);
 	}
 }

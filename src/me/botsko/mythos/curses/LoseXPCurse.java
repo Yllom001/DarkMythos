@@ -16,6 +16,7 @@ public class LoseXPCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 10;
 	}
@@ -25,6 +26,7 @@ public class LoseXPCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book was cursed... you have sacrificed XP!";
 	}
@@ -34,6 +36,7 @@ public class LoseXPCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
 		player.setLevel(0);
 		player.setTotalExperience(0);

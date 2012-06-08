@@ -24,13 +24,22 @@ public class MythosUtil {
 	 * @param player
 	 */
 	public static void subtractFromHand(Player player){
-		
 		ItemStack in_hand = player.getInventory().getItemInHand();
-		if(in_hand.getAmount() == 1){
-			player.getInventory().remove(in_hand);
-		} else {
-			in_hand.setAmount( in_hand.getAmount() - 1 );
-		}
+		removeItem(player, in_hand);
 	}
 	
+	
+	/**
+	 * 
+	 * @param player
+	 * @param i
+	 */
+	public static void removeItem( Player player, ItemStack i ){
+		if(i.getAmount() == 1){
+			player.getInventory().remove(i);
+		} else {
+			i.setAmount( i.getAmount() - 1 );
+		}
+		player.updateInventory();
+	}
 }

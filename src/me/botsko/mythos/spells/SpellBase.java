@@ -30,6 +30,7 @@ public class SpellBase implements MythosWeighted {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}
