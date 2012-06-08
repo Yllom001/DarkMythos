@@ -1,6 +1,5 @@
 package me.botsko.mythos.curses;
 
-import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
@@ -31,16 +30,13 @@ public class ExplosionCurse extends CurseBase {
 	}
 
 	
-	
 	/**
 	 * 
 	 * @param player
 	 */
 	public void applyCurse(Player player){
-		float explosionPower = 4F;
-		Location l = player.getLocation();
-		player.getWorld().createExplosion(l, explosionPower);
-		player.setHealth( 0 );
+		player.getWorld().createExplosion(player.getLocation(), 4F);
+		player.setHealth(0);
 		subtractFromHand( player );
 	}
 }

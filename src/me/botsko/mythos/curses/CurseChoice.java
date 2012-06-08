@@ -24,6 +24,8 @@ public class CurseChoice {
 		curses.add(new PoisonPlayerCurse());
 		curses.add(new KillPlayerCurse());
 		curses.add(new LoseXPCurse());
+		curses.add(new ExplosionCurse());
+		curses.add(new FallCurse());
 	}
 	
 	
