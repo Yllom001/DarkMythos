@@ -35,7 +35,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * @param player
 	 */
 	public void applyCurse(Player player){
-		player.setHealth( 15 );
+		player.setHealth( player.getHealth() - 15 );
 		subtractFromHand( player );
 	}
 }

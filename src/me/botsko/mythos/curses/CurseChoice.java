@@ -34,10 +34,9 @@ public class CurseChoice {
 	public CurseBase chooseRandomCurse(){
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
-//		if(WeightedRandom.getRandomNumber() == 2){
+		if(WeightedRandom.getRandomNumber() == 2){
 			return (CurseBase) WeightedRandom.chooseOnWeight(curses);
-//		}
-//		return null;
-		
+		}
+		return null;
 	}
 }
