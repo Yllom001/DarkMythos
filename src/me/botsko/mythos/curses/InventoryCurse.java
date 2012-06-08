@@ -51,7 +51,9 @@ public class InventoryCurse extends CurseBase {
         if (i == null){
         	return removeRandomItem(player);
         } else {
-        return i;}
+        i.setAmount(0);
+        return null;
+        }
 		
 	}
 }
