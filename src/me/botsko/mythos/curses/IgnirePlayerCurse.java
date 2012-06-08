@@ -3,7 +3,7 @@ package me.botsko.mythos.curses;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-public class SmiteCurse extends CurseBase {
+public class IgnirePlayerCurse extends CurseBase {
 	
 	
 	/**

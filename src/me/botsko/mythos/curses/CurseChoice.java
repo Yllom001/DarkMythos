@@ -20,13 +20,13 @@ public class CurseChoice {
 	 * @todo I'd like them to self-register eventually
 	 */
 	public CurseChoice(){
-		curses.add(new HealthDamageCurse());
-		curses.add(new PoisonPlayerCurse());
-		curses.add(new KillPlayerCurse());
-		curses.add(new LoseXPCurse());
-		curses.add(new ExplosionCurse());
-		curses.add(new FallCurse());
-		curses.add(new SmiteCurse());
+//		curses.add(new HealthDamageCurse());
+//		curses.add(new PoisonPlayerCurse());
+//		curses.add(new KillPlayerCurse());
+//		curses.add(new LoseXPCurse());
+//		curses.add(new ExplosionCurse());
+//		curses.add(new FallCurse());
+//		curses.add(new SmiteCurse());
 		curses.add(new InventoryCurse());
 	}
 	
@@ -38,9 +38,9 @@ public class CurseChoice {
 	public CurseBase chooseRandomCurse(){
 		// We only want to choose a weighted curse
 		// very rarely, so it's odds are checked first
-		if(WeightedRandom.getRandomNumber() == 2){
+//		if(WeightedRandom.getRandomNumber() == 2){
 			return (CurseBase) WeightedRandom.chooseOnWeight(curses);
-		}
-		return null;
+//		}
+//		return null;
 	}
 }

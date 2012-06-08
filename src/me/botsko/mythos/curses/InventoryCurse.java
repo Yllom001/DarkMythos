@@ -2,11 +2,14 @@ package me.botsko.mythos.curses;
 
 import java.util.Random;
 
+import me.botsko.mythos.utilities.MythosUtil;
+
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class InventoryCurse extends CurseBase {
+	
 	static Random r = new Random();
 	
 	/**
@@ -21,7 +24,7 @@ public class InventoryCurse extends CurseBase {
 	 */
 	@Override
 	public int getWeight(){
-		return 1;
+		return 10;
 	}
 	
 	
@@ -41,22 +44,23 @@ public class InventoryCurse extends CurseBase {
 	 */
 	@Override
 	public void applyCurse(Player player){
-		removeRandomItem(player);
-		subtractFromHand( player );
-		
+		removeRandomItem( player );
 	}
 
 
-	private static ItemStack removeRandomItem(Player player) {
-		ItemStack i;
-        int index = r.nextInt(36);
-        i = player.getInventory().getItem(index);
-        if (i == null){
-        	return removeRandomItem(player);
-        } else {
-        i.setAmount(0);
-        return null;
+	/**
+	 * 
+	 * @param player
+	 * @return
+	 */
+	private void removeRandomItem(Player player) {
+        ItemStack i = null;
+        while(i == null){
+			i = player.getInventory().getItem( r.nextInt(36) );
+			if(i != null && i != player.getInventory().getItemInHand()){
+				MythosUtil.removeItem(player, i);
+			}
         }
-		
+        subtractFromHand( player );
 	}
 }
