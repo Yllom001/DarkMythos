@@ -7,22 +7,22 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 
 import me.botsko.mythos.Mythos;
-import me.botsko.mythos.awards.AwardChoice;
 import me.botsko.mythos.spells.SpellBase;
+import me.botsko.mythos.spells.SpellChoice;
 
 
-public class RewardsBlockBreakEvent implements Listener {
+public class MythosBlockBreakEvent implements Listener {
 	
 	private Mythos plugin;
-	private AwardChoice ac;
+	private SpellChoice ac;
 	
 	/**
 	 * 
 	 * @param plugin
 	 */
-	public RewardsBlockBreakEvent( Mythos plugin ){
+	public MythosBlockBreakEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.ac = new AwardChoice();
+		this.ac = new SpellChoice();
 	}
 
 	
@@ -33,7 +33,7 @@ public class RewardsBlockBreakEvent implements Listener {
 	@EventHandler(priority = EventPriority.NORMAL)
     public void onBlockBreak(final BlockBreakEvent event){
 
-		SpellBase award = ac.chooseRandomAward();
+		SpellBase award = ac.chooseRandomSpell();
 		if(award != null){
 			
 			// Get the block break award

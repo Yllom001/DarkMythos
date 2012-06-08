@@ -1,21 +1,12 @@
-package me.botsko.mythos.awards;
+package me.botsko.mythos.spells;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-import me.botsko.mythos.spells.BotanicalMaturitySpell;
-import me.botsko.mythos.spells.CreatureBanisherSpell;
-import me.botsko.mythos.spells.CreatureThiefSpell;
-import me.botsko.mythos.spells.DiamondTouchSpell;
-import me.botsko.mythos.spells.FeatherTouchSpell;
-import me.botsko.mythos.spells.GoldenTouchSpell;
-import me.botsko.mythos.spells.IronTouchSpell;
-import me.botsko.mythos.spells.PickSummonerSpell;
-import me.botsko.mythos.spells.SpellBase;
 
-public class AwardChoice {
+public class SpellChoice {
 	
 	/**
 	 * Holds the spells we offer
@@ -27,7 +18,7 @@ public class AwardChoice {
 	 * Add spells to the list.
 	 * @todo I'd like them to self-register eventually
 	 */
-	public AwardChoice(){
+	public SpellChoice(){
 		spells.add(new BotanicalMaturitySpell());
 		spells.add(new IronTouchSpell());
 		spells.add(new GoldenTouchSpell());
@@ -43,14 +34,13 @@ public class AwardChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public SpellBase chooseRandomAward(){
+	public SpellBase chooseRandomSpell(){
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
-		if(getRandomNumber() == 5){
+		if(getRandomNumber() == 2){
 			return chooseOnWeight(spells);
 		}
 		return null;
-		
 	}
 	
 	
@@ -58,7 +48,7 @@ public class AwardChoice {
 	 * Chooses a random reward.
 	 * @return
 	 */
-	public SpellBase chooseAward(int spell_id){
+	public SpellBase chooseSpell(int spell_id){
 		Iterator<SpellBase> iterator = spells.iterator();
 		while (iterator.hasNext()) {
 			SpellBase spell = iterator.next();
@@ -76,7 +66,7 @@ public class AwardChoice {
 	 */
 	protected int getRandomNumber(){
 		Random randomGenerator = new Random();
-		return randomGenerator.nextInt(25); // @todo configure?
+		return randomGenerator.nextInt(10); // @todo configure?
 	}
 	
 	

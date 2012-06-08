@@ -8,7 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class RewardsPlayerPickupItemEvent implements Listener {
+public class MythosPlayerPickupItemEvent implements Listener {
 	
 	private Mythos plugin;
 	
@@ -16,7 +16,7 @@ public class RewardsPlayerPickupItemEvent implements Listener {
 	 * 
 	 * @param plugin
 	 */
-	public RewardsPlayerPickupItemEvent( Mythos plugin ){
+	public MythosPlayerPickupItemEvent( Mythos plugin ){
 		this.plugin = plugin;
 	}
 

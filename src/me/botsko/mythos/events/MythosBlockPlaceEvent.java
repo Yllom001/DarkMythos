@@ -10,7 +10,7 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import me.botsko.mythos.Mythos;
 
 
-public class RewardsBlockPlaceEvent implements Listener {
+public class MythosBlockPlaceEvent implements Listener {
 	
 //	private Rewards plugin;
 	
@@ -18,7 +18,7 @@ public class RewardsBlockPlaceEvent implements Listener {
 	 * 
 	 * @param plugin
 	 */
-	public RewardsBlockPlaceEvent( Mythos plugin ){
+	public MythosBlockPlaceEvent( Mythos plugin ){
 //		this.plugin = plugin;
 	}
 

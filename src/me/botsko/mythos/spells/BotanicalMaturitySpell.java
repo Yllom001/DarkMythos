@@ -101,8 +101,8 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 			currBlock.getWorld().generateTree(currBlock.getLocation(), t);
 			subtractFromHand( player );
 			return true;
+
 		}
-		
 		return false;
 	}
 }
