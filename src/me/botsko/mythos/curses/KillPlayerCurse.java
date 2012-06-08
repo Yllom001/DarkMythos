@@ -16,6 +16,7 @@ public class KillPlayerCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}
@@ -25,6 +26,7 @@ public class KillPlayerCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book held the ultimate curse... you have sacrificed your life!";
 	}
@@ -34,6 +36,7 @@ public class KillPlayerCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
 		subtractFromHand( player );
 		player.setHealth( 0 );

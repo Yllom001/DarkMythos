@@ -12,6 +12,7 @@ public class CurseBase implements MythosWeighted {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}

@@ -16,6 +16,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 60;
 	}
@@ -25,6 +26,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book was cursed! Acheron demands a sacrifice of health!";
 	}
@@ -34,6 +36,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
 		player.setHealth( player.getHealth() - 15 );
 		subtractFromHand( player );

@@ -16,6 +16,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public short getSpellId(){
 		return 4;
 	}
@@ -24,6 +25,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 2;
 	}
@@ -34,6 +36,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You have discovered a magical spell: Diamond Touch";
 	}
@@ -43,6 +46,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Diamond Touch! Spell book consumed.";
 	}
@@ -51,6 +55,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
@@ -78,6 +83,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
+	@Override
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		
 		Block currBlock = event.getClickedBlock();

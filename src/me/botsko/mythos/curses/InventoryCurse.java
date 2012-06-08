@@ -19,6 +19,7 @@ public class InventoryCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}
@@ -28,6 +29,7 @@ public class InventoryCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book held a strong curse... you had an item stolen!";
 	}
@@ -37,6 +39,7 @@ public class InventoryCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
 		removeRandomItem(player);
 		subtractFromHand( player );

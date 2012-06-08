@@ -17,6 +17,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public short getSpellId(){
 		return 1;
 	}
@@ -25,6 +26,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 80;
 	}
@@ -34,6 +36,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You have discovered a magical spell: Demeter's Spell of Botanical Maturity";
 	}
@@ -43,6 +46,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Botanical Maturity! Spell book consumed.";
 	}
@@ -51,6 +55,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
@@ -78,6 +83,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
+	@Override
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		
 		Block currBlock = event.getClickedBlock();

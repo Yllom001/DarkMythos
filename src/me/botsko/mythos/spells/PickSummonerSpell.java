@@ -15,6 +15,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public short getSpellId(){
 		return 6;
 	}
@@ -23,6 +24,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 61;
 	}
@@ -32,6 +34,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You have discovered a magical spell: Pick Summoner!";
 	}
@@ -41,6 +44,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Pick Summoner! Spell books consumed.";
 	}
@@ -49,6 +53,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
@@ -76,6 +81,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
+	@Override
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		player.getInventory().addItem( new ItemStack( Material.IRON_PICKAXE, 1 ) );
 		player.updateInventory();

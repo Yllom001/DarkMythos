@@ -43,6 +43,7 @@ public class Mythos extends JavaPlugin {
     /**
      * Enables the plugin and activates our player listeners
      */
+	@Override
 	public void onEnable(){
 		
 		this.log("Initializing plugin.");
@@ -142,6 +143,7 @@ public class Mythos extends JavaPlugin {
 	/**
 	 * Shutdown
 	 */
+	@Override
 	public void onDisable(){
 		this.log("Closing plugin.");
 	}	

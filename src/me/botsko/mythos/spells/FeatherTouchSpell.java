@@ -16,6 +16,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public short getSpellId(){
 		return 5;
 	}
@@ -24,6 +25,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 50;
 	}
@@ -33,6 +35,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You have discovered a magical spell: Feather Touch";
 	}
@@ -42,6 +45,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getSpellUseMessage(){
 		return "Used spell Feather Touch! Spell book consumed.";
 	}
@@ -50,6 +54,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
@@ -77,6 +82,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * @param event
 	 * @return
 	 */
+	@Override
 	public boolean useSpellPlayerInteract(PlayerInteractEvent event, Player player){
 		Block currBlock = event.getClickedBlock();
 		ItemStack copy = new ItemStack( currBlock.getType(), 1 );

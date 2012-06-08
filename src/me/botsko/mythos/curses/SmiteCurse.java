@@ -16,6 +16,7 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public int getWeight(){
 		return 1;
 	}
@@ -25,6 +26,7 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getMessage(){
 		return "Spell book held a powerful curse... you have set yourself on fire!";
 	}
@@ -34,6 +36,7 @@ public class SmiteCurse extends CurseBase {
 	 * 
 	 * @param player
 	 */
+	@Override
 	public void applyCurse(Player player){
         player.setFireTicks(10000);
 		subtractFromHand( player );

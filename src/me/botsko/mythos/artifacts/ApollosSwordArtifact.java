@@ -14,6 +14,7 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	/**
 	 * Returns the weighting of the award
 	 */
+	@Override
 	public int getWeight(){
 		return 50;
 	}
@@ -23,6 +24,7 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	 * 
 	 * @return
 	 */
+	@Override
 	public String getAwardMessage(){
 		return "You've just discovered a Mighty Sword of Apollo!";
 	}
@@ -31,6 +33,7 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	/**
 	 * 
 	 */
+	@Override
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
