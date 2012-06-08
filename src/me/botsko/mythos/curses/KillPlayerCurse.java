@@ -28,7 +28,6 @@ public class KillPlayerCurse extends CurseBase {
 	public String getMessage(){
 		return "Spell book held the ultimate curse... you have sacrificed your life!";
 	}
-
 	
 	
 	/**

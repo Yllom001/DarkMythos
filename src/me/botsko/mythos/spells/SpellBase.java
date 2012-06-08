@@ -1,5 +1,7 @@
 package me.botsko.mythos.spells;
 
+import me.botsko.mythos.MythosWeighted;
+
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -8,7 +10,7 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class SpellBase {
+public class SpellBase implements MythosWeighted {
 	
 	
 	/**

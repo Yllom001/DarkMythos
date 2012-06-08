@@ -23,7 +23,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 30;
+		return 50;
 	}
 	
 	

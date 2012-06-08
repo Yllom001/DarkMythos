@@ -28,10 +28,9 @@ public class PoisonPlayerCurse extends CurseBase {
 	 * @return
 	 */
 	public String getMessage(){
-		return "Spell book was cursed... you have sacrificed health!";
+		return "Spell book was cursed... you have been poisoned!";
 	}
 
-	
 	
 	/**
 	 * 
@@ -39,6 +38,7 @@ public class PoisonPlayerCurse extends CurseBase {
 	 */
 	public void applyCurse(Player player){
 		player.addPotionEffect( new PotionEffect(PotionEffectType.POISON, 200, 1) );
+		player.addPotionEffect( new PotionEffect(PotionEffectType.WEAKNESS, 200, 1) );
 		subtractFromHand( player );
 	}
 }

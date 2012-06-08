@@ -3,7 +3,7 @@ package me.botsko.mythos.curses;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
-public class HealthDamageCurse extends CurseBase {
+public class LoseXPCurse extends CurseBase {
 	
 	
 	/**
@@ -17,7 +17,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * @return
 	 */
 	public int getWeight(){
-		return 60;
+		return 10;
 	}
 	
 	
@@ -26,7 +26,7 @@ public class HealthDamageCurse extends CurseBase {
 	 * @return
 	 */
 	public String getMessage(){
-		return "Spell book was cursed... you have sacrificed health!";
+		return "Spell book was cursed... you have sacrificed XP!";
 	}
 
 	
@@ -35,7 +35,8 @@ public class HealthDamageCurse extends CurseBase {
 	 * @param player
 	 */
 	public void applyCurse(Player player){
-		player.setHealth( player.getHealth() - 15 );
+		player.setLevel(0);
+		player.setTotalExperience(0);
 		subtractFromHand( player );
 	}
 }

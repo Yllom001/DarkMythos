@@ -24,7 +24,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 * Returns the weighting of the award
 	 */
 	public int getWeight(){
-		return 60;
+		return 80;
 	}
 	
 	
