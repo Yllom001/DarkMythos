@@ -18,7 +18,7 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public short getSpellId(){
-		return 99;
+		return 9;
 	}
 	
 	
@@ -27,7 +27,7 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public int getWeight(){
-		return 60;
+		return 1;
 	}
 	
 	
@@ -37,7 +37,7 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Vive Touch";
+		return "You have discovered a rare magical book: Shrine of Viveleroi!";
 	}
 	
 	
@@ -47,7 +47,7 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getSpellUseMessage(){
-		return "Used spell Vive Touch! Spell book consumed.";
+		return "Used spell Shrine of Viveleroi! Spell book consumed.";
 	}
 	
 	
@@ -75,6 +75,24 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 		}
 		return false;
 	}
+
+	
+	/**
+	 * Mikes experiment for making each section more efficient.
+	 * @param l
+	 * @param range_sart
+	 * @param range_end
+	 * @param color
+	 */
+	protected void drawRange( Location l, double z, int range_start, int range_end, Byte colors[] ){
+		int i = 0;
+		for( int range = range_start; range <= range_end; range++){
+			l.setZ( z+range );
+			l.getBlock().setTypeIdAndData(35, colors[i], true);
+			i++;
+		}
+	}
+	
 	
 	/**
 	 * 
@@ -96,198 +114,37 @@ public class ViveTouchSpell extends SpellBase implements Spell {
 	Byte purple = 10;
 	Byte darkblue = 11;
 	Byte darkgreen = 13;
-	{
-	Location loc = new Location(player.getWorld(), (x), y, (z + 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z + 2));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z + 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z - 2));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z - 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}
+	
+	
+	Byte colors[];
+	
+	// Bottom front
+	colors = new Byte[]{white, white, white, white, white, white, white, white};
+	drawRange(l, z, -4, 3, colors);
+	
+	colors = new Byte[]{white, darkgreen, darkgreen, white, white, darkgreen, darkgreen, white};
+	l.setY( y+1 );
+	drawRange(l, z, -4, 3, colors);
+	
+	l.setY( y+2 );
+	drawRange(l, z, -4, 3, colors);
+	
+	colors = new Byte[]{darkgreen, darkgreen, darkgreen, white, white, darkgreen, darkgreen, darkgreen};
+	l.setY( y+3 );
+	drawRange(l, z, -4, 3, colors);
+	
+	colors = new Byte[]{white, darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, darkgreen, white};
+	l.setY( y+4 );
+	drawRange(l, z, -4, 3, colors);
+	
+	colors = new Byte[]{white, darkgreen, darkgreen, white, white, darkgreen, darkgreen, white};
+	l.setY( y+5 );
+	drawRange(l, z, -4, 3, colors);
+	
+	colors = new Byte[]{green, green, green, white, white, green, green, green};
+	l.setY( y+6 );
+	drawRange(l, z, -4, 3, colors);
 
-
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 1), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 1), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 1), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 1, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 1, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 1), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 1), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 1, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}
-
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 2), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 2), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 2), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 2, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y +2, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 2), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 2), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 2, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 3), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 3), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 3), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 3, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y +3, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 3), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 3), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 3, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 4), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 4), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 4), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 4, (z));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 4, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 4), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 4), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 4, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}
-
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 5), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 5), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 5), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 5, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 5, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 5), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 5), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, darkgreen, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 5, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}
-
-
-
-{
-	Location loc = new Location(player.getWorld(), (x), (y + 6), (z + 3));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y +6), (z + 2));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 6), (z + 1));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 6, (z));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y +6, (z - 1));
-	loc.getBlock().setTypeIdAndData(35, white, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 6), (z - 2));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), (y + 6), (z - 3));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}{
-	Location loc = new Location(player.getWorld(), (x), y + 6, (z - 4));
-	loc.getBlock().setTypeIdAndData(35, green, true);
-}
 
 
 
