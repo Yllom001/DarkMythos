@@ -17,7 +17,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class MythosPlayerInteractEvent implements Listener {
 	
 	private Mythos plugin;
-	private SpellChoice ac;
+	private SpellChoice sc;
 	private CurseChoice cc;
 	
 	/**
@@ -26,8 +26,8 @@ public class MythosPlayerInteractEvent implements Listener {
 	 */
 	public MythosPlayerInteractEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.ac = new SpellChoice();
-		this.cc = new CurseChoice();
+		this.sc = new SpellChoice( plugin );
+		this.cc = new CurseChoice( plugin );
 	}
 	
 	
@@ -43,7 +43,7 @@ public class MythosPlayerInteractEvent implements Listener {
 			if(player.getItemInHand().getType() == Material.BOOK){
 				
 				// Use the durability to find the award id
-				SpellBase award = ac.chooseSpell( player.getItemInHand().getDurability() );
+				SpellBase award = sc.chooseSpell( player.getItemInHand().getDurability() );
 				if(award != null){
 					
 					// If the item is cursed, apply the curse and skip using it

@@ -12,9 +12,9 @@ public class WeightedRandom {
 	 * Gets a random number
 	 * @return
 	 */
-	public static int getRandomNumber(){
+	public static int getRandomNumber( Integer max ){
 		Random randomGenerator = new Random();
-		return randomGenerator.nextInt(5); // @todo configure?
+		return randomGenerator.nextInt(max);
 	}
 	
 	

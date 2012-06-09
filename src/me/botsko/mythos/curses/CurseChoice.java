@@ -3,11 +3,14 @@ package me.botsko.mythos.curses;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.botsko.mythos.Mythos;
 import me.botsko.mythos.MythosWeighted;
 import me.botsko.mythos.utilities.WeightedRandom;
 
 
 public class CurseChoice {
+	
+	private Mythos plugin;
 	
 	/**
 	 * Holds the curses we offer
@@ -19,7 +22,10 @@ public class CurseChoice {
 	 * Add spells to the list.
 	 * @todo I'd like them to self-register eventually
 	 */
-	public CurseChoice(){
+	public CurseChoice( Mythos plugin ){
+		
+		this.plugin = plugin;
+		
 		curses.add(new HealthDamageCurse());
 		curses.add(new PoisonPlayerCurse());
 		curses.add(new KillPlayerCurse());
@@ -39,7 +45,7 @@ public class CurseChoice {
 	public CurseBase chooseRandomCurse(){
 		// We only want to choose a weighted curse
 		// very rarely, so it's odds are checked first
-		if(WeightedRandom.getRandomNumber() == 2){
+		if(WeightedRandom.getRandomNumber( plugin.getConfig().getInt("mythos.curse_chance_range") ) == 2){
 			return (CurseBase) WeightedRandom.chooseOnWeight(curses);
 		}
 		return null;
