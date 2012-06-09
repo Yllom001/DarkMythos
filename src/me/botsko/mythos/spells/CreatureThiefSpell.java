@@ -37,7 +37,7 @@ public class CreatureThiefSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Creature Thief";
+		return "You discovered a magical book: Artemis' Creature Thief";
 	}
 	
 	

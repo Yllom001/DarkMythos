@@ -17,3 +17,13 @@ Authors:
 - Viveleroi (Creator, Lead Developer)
 - jasonbbb7111 (Contributor)
 
+## Gods
+
+Test
+
+- Demeter - God of Horticulture/Botany
+- Artemis - Goddess of wilderness, the hunt, creatures
+- Hephaestus - fire, metalworking, stonemasonry, sculpture and volcanism
+- Ares - God of war, bloodlust, violence
+
+

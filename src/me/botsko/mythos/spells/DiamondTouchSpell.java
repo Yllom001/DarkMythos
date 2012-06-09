@@ -38,7 +38,7 @@ public class DiamondTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Diamond Touch";
+		return "You discovered a magical book: Hephaestus' Spell of Diamond Touch";
 	}
 	
 	

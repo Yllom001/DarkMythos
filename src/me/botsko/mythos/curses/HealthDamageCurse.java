@@ -28,7 +28,7 @@ public class HealthDamageCurse extends CurseBase {
 	 */
 	@Override
 	public String getMessage(){
-		return "Spell book was cursed! Acheron demands a sacrifice of health!";
+		return "Spell book was cursed! Ares demands a sacrifice of health!";
 	}
 
 	

@@ -37,7 +37,7 @@ public class CreatureBanisherSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Creature Banisher";
+		return "You discovered a magical book: Artemis' Spell of Creature Banishing";
 	}
 	
 	

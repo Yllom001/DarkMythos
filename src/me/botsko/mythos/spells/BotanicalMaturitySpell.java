@@ -38,7 +38,7 @@ public class BotanicalMaturitySpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Demeter's Spell of Botanical Maturity";
+		return "You discovered a magical book: Demeter's Spell of Botanical Maturity";
 	}
 	
 	

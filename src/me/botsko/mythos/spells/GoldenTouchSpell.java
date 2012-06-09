@@ -37,7 +37,7 @@ public class GoldenTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Golden Touch";
+		return "You discovered a magical book: Hephaestus' Spell of Golden Touch";
 	}
 	
 	

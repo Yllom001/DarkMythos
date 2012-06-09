@@ -37,7 +37,7 @@ public class IronTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Iron Touch";
+		return "You discovered a magical book: Hephaestus' Spell of Iron Touch";
 	}
 	
 	

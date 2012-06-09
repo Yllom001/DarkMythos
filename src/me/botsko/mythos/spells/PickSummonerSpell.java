@@ -36,7 +36,7 @@ public class PickSummonerSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Pick Summoner!";
+		return "You discovered a magical book: Hephaestus' Pick Summoner!";
 	}
 	
 	

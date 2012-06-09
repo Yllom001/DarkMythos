@@ -37,7 +37,7 @@ public class FeatherTouchSpell extends SpellBase implements Spell {
 	 */
 	@Override
 	public String getAwardMessage(){
-		return "You have discovered a magical spell: Feather Touch";
+		return "You discovered a magical book: Hephaestus' Spell of Feather Touch";
 	}
 	
 	

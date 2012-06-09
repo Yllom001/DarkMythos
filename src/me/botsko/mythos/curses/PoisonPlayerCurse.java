@@ -30,7 +30,7 @@ public class PoisonPlayerCurse extends CurseBase {
 	 */
 	@Override
 	public String getMessage(){
-		return "Spell book was cursed... you have been poisoned!";
+		return "Spell book was cursed... Ares' Spell of Poison!";
 	}
 
 	
