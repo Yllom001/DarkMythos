@@ -36,6 +36,7 @@ public class SpellChoice {
 		spells.add(new CreatureThiefSpell());
 		spells.add(new PickSummonerSpell());
 		spells.add(new CreatureBanisherSpell());
+		spells.add(new ViveTouchSpell());
 	}
 	
 	

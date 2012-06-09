@@ -29,7 +29,7 @@ public class FallCurse extends CurseBase {
 	 */
 	@Override
 	public String getMessage(){
-		return "Spell book was cursed... you have destroyed the ground beneath you!";
+		return "Spell book was cursed... you have been shot up to the heavens!";
 	}
 
 	

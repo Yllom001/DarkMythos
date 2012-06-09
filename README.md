@@ -15,7 +15,7 @@ This plugin was custom designed for the amazing *s.dhmc.us* Minecraft server.
 Authors:
 
 - Viveleroi (Creator, Lead Developer)
-- jasonbbb7111 (Contributor)
+- jasonbbb711 (Contributor)
 
 ## Gods
 
