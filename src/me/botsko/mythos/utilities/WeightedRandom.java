@@ -14,7 +14,7 @@ public class WeightedRandom {
 	 */
 	public static int getRandomNumber(){
 		Random randomGenerator = new Random();
-		return randomGenerator.nextInt(5); // @todo configure?
+		return randomGenerator.nextInt(25); // @todo configure?
 	}
 	
 	
