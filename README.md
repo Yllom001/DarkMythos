@@ -2,7 +2,7 @@
 
 Imagine you're excavating an area for a new house and suddenly a book appears and thunder booms from the sky. You've just found a lost spell book but only the gods know what kind of spell book it will be.
 
-Will it be Demeter's Spell of Botanical Maturity? xxxx's Spell of Diamond Touch? Feather Touch or Creature Thief? Or any of dozens more?
+Will it be Demeter's Spell of Botanical Maturity? Hephaestus' Spell of Diamond Touch? Feather Touch or Creature Thief? Or any of dozens more?
 
 Pick up your spell book quickly before someone else takes it, and store it for later. When you're ready to use it, follow its instructions on use but **beware**: The Gods have also *cursed* some of the spell books but the only way to know is to activate the spells. 
 
@@ -15,11 +15,9 @@ This plugin was custom designed for the amazing *s.dhmc.us* Minecraft server.
 Authors:
 
 - Viveleroi (Creator, Lead Developer)
-- jasonbbb711 (Contributor)
+- jasonbbb7111 (Contributor)
 
 ## Gods
-
-Test
 
 - Demeter - God of Horticulture/Botany
 - Artemis - Goddess of wilderness, the hunt, creatures
