@@ -25,8 +25,8 @@ public class MythosBlockBreakEvent implements Listener {
 	 */
 	public MythosBlockBreakEvent( Mythos plugin ){
 		this.plugin = plugin;
-		this.sc = new SpellChoice();
-		this.ac = new ArtifactChoice();
+		this.sc = new SpellChoice( plugin );
+		this.ac = new ArtifactChoice( plugin );
 	}
 
 	

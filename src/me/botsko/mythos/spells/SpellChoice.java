@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import me.botsko.mythos.Mythos;
 import me.botsko.mythos.MythosWeighted;
 import me.botsko.mythos.utilities.WeightedRandom;
 
 
 public class SpellChoice {
+	
+	private Mythos plugin;
 	
 	/**
 	 * Holds the spells we offer
@@ -21,7 +24,10 @@ public class SpellChoice {
 	 * @todo I'd like them to self-register eventually
 	 * 
 	 */
-	public SpellChoice(){
+	public SpellChoice( Mythos plugin ){
+		
+		this.plugin = plugin;
+		
 		spells.add(new BotanicalMaturitySpell());
 		spells.add(new IronTouchSpell());
 		spells.add(new GoldenTouchSpell());
@@ -40,7 +46,7 @@ public class SpellChoice {
 	public SpellBase chooseRandomSpell(){
 		// We only want to choose a weighted award
 		// very rarely, so it's odds are checked first
-		if(WeightedRandom.getRandomNumber() == 2){
+		if(WeightedRandom.getRandomNumber( plugin.getConfig().getInt("mythos.spell_chance_range") ) == 2){
 			return (SpellBase) WeightedRandom.chooseOnWeight(spells);
 		}
 		return null;
