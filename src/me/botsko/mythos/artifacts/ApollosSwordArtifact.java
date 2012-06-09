@@ -37,7 +37,7 @@ public class ApollosSwordArtifact extends ArtifactBase implements Artifact {
 	public boolean getBlockBreakAward(BlockBreakEvent event){
 		
 		block = event.getBlock();
-		if( block.getType() == Material.STONE ){
+		if( block.getType() == Material.DIAMOND_ORE ){
 			
 			// Set item
 			ItemStack i = new ItemStack(Material.DIAMOND_SWORD, 1);
